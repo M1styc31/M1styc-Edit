@@ -1,0 +1,339 @@
+<!-- Michele Gonzalez 4EL -->
+<!DOCTYPE html>
+<html lang="it">
+
+	<head>
+
+    	<meta charset="utf-8">
+    	<title>Michele Gonzalez</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+
+		<style type="text/css">
+			header {
+				font-size: 1.5em;
+				color: black;
+				text-align: center;
+				font-weight: bold;
+				padding: 20px;
+			}
+			
+			body {
+				background:linear-gradient(#9bdcee, #ffffff);
+				font-family: "Lexend";
+				margin-top: 10px;
+			}
+
+			nav ul {
+				display: flex;
+				align-items: center;
+				justify-content: space-evenly;
+				gap: 5rem;
+				list-style-type: none;
+				padding: 1rem;
+				background: linear-gradient(#6fd3ef, #f4f4fd86);
+				padding: 0.75em;
+				border: 4px solid rgb(226, 215, 237);
+				border-radius: 1em;
+        	}
+
+			h2 {
+				font-size: 1em;
+				background-color: #d9e8ebaf;
+				color: black;
+				text-align: center;
+				font-weight: bold;
+				padding: 10px;
+				background: linear-gradient(#fafbfc, rgba(8, 56, 247, 0.123));
+				padding: 0.5em;
+				border: 4px solid rgb(235, 227, 244);
+				border-radius: 0.5em;
+			}
+
+			#sfondo1 {
+				background-color: rgba(176, 218, 254, 0.66);
+				background: linear-gradient(#00d5ffcb, #dfe3f1);
+			}
+
+			.rimane_in_alto {
+				position: sticky;
+				top: 0;
+				backdrop-filter: blur(6px);
+			}
+
+			.foto {
+				box-shadow: 0 10px 30px rgba(0, 0, 0, 0.587);
+    			border-radius: 10px;
+				width: 100%
+       			max-width: 100%;
+			}
+
+			p {
+				text-shadow: 3px 4px 6px rgba(0, 0, 0, 0.441);
+			}
+
+			.galleria  {
+				display: flex;
+				justify-content: center;
+				gap: 100px;
+				background: linear-gradient(#ffffff, #3e5dcd27);
+				padding: 15px;
+				border-radius: 15px;
+			}
+
+			.galleria h4 {
+				padding: 230px;
+			}
+
+			.img_testo {
+				text-align: center;
+			}
+
+			table {
+				width: 100%;
+				border-collapse: collapse;
+				border-radius: 10px;
+				overflow: hidden;
+				box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+			}
+
+			th {
+				background: linear-gradient(#6fd3ef, #4aaed1);
+				color: white;
+				padding: 12px;
+			}
+
+			td {
+				padding: 10px;
+				text-align: center;
+			}
+
+			#fine {
+				text-align: center;
+				padding: 20px;
+				font-size: 0.9em;
+				color: #555;
+			}
+
+
+		</style>
+
+    	<script>
+			function risultato() {
+				var nome, cognome, voto, risposta;
+				nome=document.getElementById("nome_").value;
+				cognome=document.getElementById("cognome_").value;
+				voto=parseInt(document.getElementById("voto_").value);
+				risposta=document.getElementById("risposta_").value;
+
+				if (risposta==="Si") {
+					if (voto>=7) {
+						document.getElementById("conclusione").innerHTML="Grazie "+nome+" "+cognome+" per la tua recensione positiva!";
+					}
+					else {
+						document.getElementById("conclusione").innerHTML="Grazie "+nome+" "+cognome+" per la tua recensione! Mi dispiace che tu non abbia apprezzato il mio sito, cercherò di migliorarlo in futuro!";
+					}
+				}
+				else{
+					document.getElementById("conclusione").innerHTML="Devi acconsentire per lasciare una recensione!";
+				}
+			}
+
+    	</script>
+
+	</head>
+
+		<body>
+			<div id="sfondo1">
+    			<header id="n1">Michele</header>
+			</div>
+				<div class="rimane_in_alto">
+					<h2>Menù di navigazione</h2>
+						<nav>
+							<ul>
+								<li><a href="#n1">Chi sono</a></li>
+								<li><a href="#n2">Dove abito</a></li>
+								<li><a href="#n3">Famiglia e Amici</a></li>
+								<li><a href="#n4">Scuola</a></li>
+								<li><a href="#n5">Nel tempo libero</a></li>
+								<li><a href="#n6">Sogni e futuro</a></li> 
+								<li><a href="#n7">Recensione</a></li> 
+							</ul>
+						</nav>
+				</div>
+
+			<h3>Chi sono?</h3>
+				<p>Ciao, mi chiamo Michele Gonzalez e ho 17 anni;
+				Sono curioso, creativo e mi piace imparare cose nuove,
+				specialmente quando si parla di tecnologia e computer...</p>
+			
+			<br id="n2"><br><br>
+			<hr>
+			<br><br><br>
+
+			<h3>Dove abito?</h3>
+				<p>Attualmente vivo in un paesino in collina di nome Tribola nel comune di Borghi,
+				a circa 5 min in macchina da Savignano sul Rubicone, dove posso trovare tutti i
+				servizi di cui ho bisogno. Fino a 2/3 anni fa però, vivevo però a San Mauro Mare
+				e prima di trasferirmi nella nuova casa ho dovuto passare 1 anno a Forlì nell'attesa<br>
+				della fine del cantiere edile. </p>
+				<div class="galleria">
+					<div class="img_testo">
+						<p><b>Tribola</b></p>
+						<img src="https://territorio.regione.emilia-romagna.it/montagna/galleria-fotografica/borghi-fc/stefania-della-motta-borghi-2.jpg/@@images/image-1600-4b940674e362643a8b9df71e5ddf2e3e.jpeg" width="500" height="" alt="Tribola" class="foto">
+					</div>
+						
+					<div class="img_testo">
+						<p><b>Forlì</b></p>
+						<img src="https://travellairs.it/wp-content/uploads/2020/10/piazza-saffi-a-forli.jpg" width="620" height="" alt="Forlì" class="foto">
+					</div>
+						
+					<div class="img_testo">
+						<p><b>San Mauro Mare</b></p>
+						<img src="https://d2fg1aan4gy9m1.cloudfront.net/ert/images/2842/conversions/san-mauro-mare%2C-panoramica%2C-archivio-comune-san-mauro%2C-cc-by-nc-sa-3.0--min-webp.webp" width="500" height="" alt="San Mauro Mare" class="foto">
+					</div>
+
+				</div>
+
+			<br id="n3"><br><br>
+			<hr>
+			<br><br><br>
+
+			<h3>La mia famiglia</h3>
+				<p>La mia famiglia è composta da 4 membri (me incluso):</p>
+				<table border="3">
+					<tr>
+						<th>-</th>
+						<th>IO</th>
+						<th>BABBO</th>
+						<th>MAMMA</th>
+						<th>FRATELLO</th>
+					</tr>
+					<tr>
+						<td>Nome</td>
+						<td>Michele</td>
+						<td>Marco</td>
+						<td>Elisa</td>
+						<td>Matteo</td>
+					</tr>
+					<tr>
+						<td>Compleanno</td>
+						<td>31 Agosto</td>
+						<td>4 Giugno</td>
+						<td>6 Giugno</td>
+						<td>28 Settembre</td>
+					</tr>
+				</table>
+
+			<br id="n4"><br><br>
+			<hr>
+			<br><br><br>
+
+			<h3>La mia scuola</h3>
+				<p>Attualmente frequento la 4°liceo dello scientifico scienze applicate al Marie Cuerie a Savignano sul Rubicone</p>
+				<div class="galleria">
+					<img src="https://www.corrierecesenate.it/wp-content/uploads/2025/07/marie-curie.png" width="900" height="" alt="Marie Curie" class="foto">
+					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2865.6633236404123!2d12.390377077608239!3d44.090303271084686!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x132cbf287e677cad%3A0xbd9b9642fe9d35d4!2sIstituto%20Statale%20D&#39;Istruzione%20Superiore%20Marie%20Curie!5e0!3m2!1sit!2sit!4v1774626975424!5m2!1sit!2sit" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="foto"></iframe>
+				</div>
+
+				<p>Le mie materie preferite:</p>
+				<table border="3">
+					<tr>
+						<th>MATERIA</th>
+						<th>INFORMATICA</th>
+						<th>MATEMATICA</th>
+						<th>FISICA</th>
+						<th>FILOSOFIA</th>
+					</tr>
+					<tr>
+						<td>Voto</td>
+						<td>10</td>
+						<td>9</td>
+						<td>9</td>
+						<td>9</td>
+					</tr>
+				</table>
+			
+			<br id="n5"><br><br>
+			<hr>
+			<br><br><br>
+
+			<h3>Cosa faccio nel tempo libero?</h3>
+				<div class="galleria">
+					<h4><b>Atletica e Ciclismo</b></h4>
+					<div class="img_testo">
+						<p>Partenza 100m</p>
+						<img src="https://hips.hearstapps.com/hmg-prod/images/atletica-leggera-1663758222.jpg?crop=1xw:0.6580976863753213xh;center,top&resize=1200:*" width="780" height="" alt="Sport" class="foto">
+					</div>
+					<div class="img_testo">
+						<p>Evenepoel e Pogacar</p>
+						<img src="https://static.sky.it/editorialimages/6781911105416929072550899083927458253098/external-upload/liveblog-manager/sport/2025/10/11/Pogacar_Evenepoel.jpg" width="620" height="" alt="Sport" class="foto">
+					</div>
+				</div>
+
+				<div class="galleria">
+					<div class="img_testo">
+						<p>Sword Art Online</p>
+						<img src="https://www.drcommodore.it/wp-content/uploads/2020/02/a6d96b1e585781865bc6b4fe8d97a50f.jpg" width="780" height="" alt="Sport" class="foto">
+					</div>
+					<div class="img_testo">
+						<p>Wuthering Waves</p>
+						<img src="https://image.api.playstation.com/vulcan/ap/rnd/202509/2911/5bfafdfcd16e8743d8d6fdaa462f1d176a1ed4d470f52d30.png" width="490" height="" alt="Sport" class="foto">
+					</div>
+					<h4><b>Anime e Videogiochi</b></h4>
+				</div>
+
+				<div class="galleria">
+					<div class="img_testo">
+						<p>After Effects</p>
+						<img src="https://www.macitynet.it/wp-content/uploads/2018/09/aftereffects-stt18-2.jpg" width="700" height="" alt="Sport" class="foto">
+					</div>
+					<h4><b>Video Editing</b></h4>
+					<div class="img_testo">
+						<p>Il mio profilo tiktok</p>
+						<blockquote class="tiktok-embed" cite="https://www.tiktok.com/@_m1styc_" data-unique-id="_m1styc_" data-embed-type="creator" style="max-width: 780px; min-width: 288px;" > <section> <a target="_blank" href="https://www.tiktok.com/@_m1styc_?refer=creator_embed">@_m1styc_</a> </section></blockquote> <script async src="https://www.tiktok.com/embed.js"></script>
+					</div>
+				</div>
+			
+			<br id="n6"><br><br>
+			<hr>
+			<br><br><br>
+
+			<h3>I miei sogni e il mio futuro</h3>
+				<p> In futuro vorrei entrare nell'università di ingegneria informatica, per poi lavorare nel settore dei videogiochi/softwares/video</p>
+
+				<div class="galleria">
+						<img src="https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/blogs/2147487571/images/c5zUX9shQJKuWwa7tGuY_iscriversi-universita.jpg" width="700" height="" alt="Sport" class="foto">
+						<img src="https://www.istitutogorjuxtridentevivante.edu.it/wp-content/uploads/2023/03/Informaticaetelecomunicazioni-1024x576.webp" width="700" height="" alt="Sport" class="foto">
+				</div>
+			
+			<br id="n7"><br><br>
+			<hr>
+			<br><br><br>
+			
+			<h3>Lascia una recensione al mio sito:</h3><br>
+			<form>
+				Acconsenti?
+				<select name="risposta" id="risposta_">
+					<option value="Si">Si</option>
+					<option value="No" selected>No</option>
+				</select> <br><br>
+				Nome: <input type="text" name="nome" id="nome_"><br><br>
+				Cognome: <input type="text" name="cognome" id="cognome_"><br><br>
+				Voto<br>
+				1<input type="range" name="voto" min="1" max="10" id="voto_">10<br><br>
+				<input type="button" value="PREMI" onclick="risultato()"> 
+			</form>
+				<p id="conclusione"></p>
+
+			<br><br><br>
+			<hr>
+			<br><br><br>
+
+			<footer id="fine">Compito di Michele Gonzalez 4EL</footer>
+
+
+
+		</body>
+</html>
