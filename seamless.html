@@ -20,9 +20,11 @@ header {
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  /* minmax(220px, 300px) impedisce alla card di superare i 300px */
+  grid-template-columns: repeat(auto-fit, minmax(220px, 300px)); 
   gap: 20px;
   padding: 30px;
+  justify-content: center; /* Centra le card nella pagina */
 }
 
 .card {
@@ -30,13 +32,25 @@ header {
   padding: 15px;
   border-radius: 12px;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .card img {
-    width: 100%;  /* L'immagine si adatta alla larghezza della card */
-    height: auto; /* Mantiene le proporzioni */
-    display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 8px; /* Opzionale: arrotonda gli angoli dell'immagine */
+  display: block;
 }
+
+/* Rimuovi la graffa extra che avevi qui */
+
+.card h3 {
+  font-size: 1.1em;
+  margin: 15px 0;
+}
+
 }
 
 .card a {
