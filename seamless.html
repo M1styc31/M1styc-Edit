@@ -2,73 +2,137 @@
 <html lang="it">
 <head>
 <meta charset="UTF-8">
-<title>Seamless</title>
+<title>M1styc | Seamless</title>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;600;800&display=swap" rel="stylesheet">
 
 <style>
+:root {
+  --primary: #a600ff;
+  --bg-dark: #080808;
+  --card-bg: rgba(255, 255, 255, 0.05);
+  --text-main: #ffffff;
+  --text-dim: #b0b0b0;
+}
+
 body {
   margin: 0;
-  font-family: Arial;
-  background: #000;
-  color: white;
+  font-family: "Lexend", sans-serif;
+  background: radial-gradient(circle at top left, #1a0029, var(--bg-dark));
+  background-attachment: fixed;
+  color: var(--text-main);
+  line-height: 1.6;
 }
 
+/* HEADER */
 header {
   text-align: center;
-  padding: 30px;
-  font-size: 2em;
+  padding: 60px 20px 30px;
+  font-size: 3em;
+  font-weight: 800;
+  letter-spacing: -2px;
+  background: linear-gradient(to bottom, var(--primary), #fff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
+/* GRID & CARDS */
 .grid {
   display: grid;
-  /* minmax(220px, 300px) impedisce alla card di superare i 300px */
-  grid-template-columns: repeat(auto-fit, minmax(220px, 300px)); 
-  gap: 50px;
-  padding: 30px;
-  justify-content: center; /* Centra le card nella pagina */
+  grid-template-columns: repeat(auto-fit, minmax(280px, 320px));
+  gap: 40px;
+  padding: 40px;
+  justify-content: center;
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
 .card {
-  background: #111;
-  padding: 15px;
-  border-radius: 12px;
+  background: var(--card-bg);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 20px;
   text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  border-color: var(--primary);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(166, 0, 255, 0.2);
 }
 
 .card img {
   width: 100%;
   height: auto;
-  border-radius: 8px; /* Opzionale: arrotonda gli angoli dell'immagine */
+  border-radius: 12px;
   display: block;
+  margin-bottom: 15px;
 }
-
-/* Rimuovi la graffa extra che avevi qui */
 
 .card h3 {
-  font-size: 1.1em;
-  margin: 15px 0;
+  font-size: 1.2em;
+  font-weight: 600;
+  margin: 10px 0 20px 0;
+  color: var(--text-main);
 }
 
-}
-
-.card a {
+/* DOWNLOAD BUTTON */
+.btn-download {
   display: block;
-  margin-top: 10px;
-  padding: 10px;
-  background: #a600ff;
+  padding: 12px;
+  background: var(--primary);
   color: white;
   text-decoration: none;
-  border-radius: 8px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 0.9em;
+  transition: 0.3s;
+  box-shadow: 0 4px 15px rgba(166, 0, 255, 0.3);
 }
 
+.btn-download:hover {
+  background: #bd33ff;
+  box-shadow: 0 6px 20px rgba(166, 0, 255, 0.5);
+  transform: scale(1.02);
+}
+
+/* HOME BUTTON (BOTTOM) */
+.nav-bottom {
+  text-align: center;
+  margin: 50px 0;
+}
+
+.btn-home {
+  display: inline-block;
+  padding: 10px 30px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50px;
+  color: var(--text-dim);
+  text-decoration: none;
+  transition: 0.3s;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.btn-home:hover {
+  color: white;
+  border-color: var(--primary);
+  background: rgba(166, 0, 255, 0.1);
+}
+
+/* FOOTER */
 footer {
   text-align: center;
-  padding: 30px;
-  font-size: 2em;
+  padding: 40px;
+  font-size: 0.9em;
+  color: var(--text-dim);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
+/* Scrollbar personalizzata */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #000; }
+::-webkit-scrollbar-thumb { background: var(--primary); border-radius: 10px; }
 </style>
 </head>
 
@@ -79,27 +143,25 @@ footer {
 <div class="grid">
 
   <div class="card">
-    <img src="images/Mahiru - Say my name.jpg" width="300">
+    <img src="images/Mahiru - Say my name.jpg" alt="Mahiru Say My Name">
     <h3>Mahiru - Say my name</h3>
-    <a href="https://drive.google.com/drive/folders/1-ZRp_KBD7xcHkKr1N3lwBVdbEg9Cp3Pd" target="_blank">Download</a>
+    <a href="https://drive.google.com/drive/folders/1-ZRp_KBD7xcHkKr1N3lwBVdbEg9Cp3Pd" class="btn-download" target="_blank">Download File</a>
   </div>
 
   <div class="card">
-    <img src="images/Mahiru - Jogada.jpg">
+    <img src="images/Mahiru - Jogada.jpg" alt="Mahiru Jogada">
     <h3>Mahiru - Jogada</h3>
-    <a href="https://drive.google.com/drive/folders/1ocv_-OHCb1RVDUZZ7qZZ8jxXoEz3Vvxo?usp=sharing" target="_blank">Download</a>
+    <a href="https://drive.google.com/drive/folders/1ocv_-OHCb1RVDUZZ7qZZ8jxXoEz3Vvxo?usp=sharing" class="btn-download" target="_blank">Download File</a>
   </div>
 
 </div>
 
-<div class="card">
-      <a href="index.html">
-        <h3>Home</h3>
-      </a>
+<div class="nav-bottom">
+  <a href="index.html" class="btn-home">← Back to Home</a>
 </div>
 
 <footer>
-  M1styc copyright 2026
+  M1styc &copy; 2026
 </footer>
 
 </body>
