@@ -1,188 +1,282 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-<meta charset="UTF-8">
-<title>M1styc</title>
-<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;600;800&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M1styc | Digital Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;600;800&display=swap" rel="stylesheet">
 
-<style>
-:root {
-  --primary: #a600ff;
-  --bg-dark: #080808;
-  --card-bg: rgba(255, 255, 255, 0.05);
-  --text-main: #ffffff;
-  --text-dim: #b0b0b0;
-}
+    <style>
+        :root {
+            --primary: #a600ff;
+            --bg-dark: #080808;
+            --card-bg: rgba(255, 255, 255, 0.05);
+            --text-main: #ffffff;
+            --text-dim: #b0b0b0;
+        }
 
-body {
-  margin: 0;
-  font-family: "Lexend", sans-serif;
-  background: radial-gradient(circle at top right, #1a0029, var(--bg-dark));
-  background-attachment: fixed;
-  color: var(--text-main);
-  line-height: 1.6;
-}
+        * {
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
 
-/* HEADER & NAV */
-header {
-  text-align: center;
-  padding: 60px 20px 20px;
-  font-size: 3em;
-  font-weight: 800;
-  letter-spacing: -2px;
-  background: linear-gradient(to bottom, var(--primary), #fff);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
+        body {
+            margin: 0;
+            font-family: "Lexend", sans-serif;
+            background: radial-gradient(circle at top right, #1a0029, var(--bg-dark));
+            background-attachment: fixed;
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
 
-nav {
-  position: sticky;
-  top: 20px;
-  z-index: 1000;
-  display: flex;
-  justify-content: center;
-}
+        /* HEADER & NAV */
+        header {
+            text-align: center;
+            padding: 80px 20px 20px;
+            font-size: clamp(2.5rem, 8vw, 4rem);
+            font-weight: 800;
+            letter-spacing: -3px;
+            background: linear-gradient(to bottom, var(--primary), #fff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
 
-nav ul {
-  display: flex;
-  gap: 30px;
-  list-style: none;
-  background: rgba(17, 17, 17, 0.8);
-  backdrop-filter: blur(10px);
-  padding: 12px 40px;
-  border-radius: 50px;
-  border: 1px solid rgba(166, 0, 255, 0.2);
-  margin: 0;
-}
+        nav {
+            position: sticky;
+            top: 20px;
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            margin-bottom: 50px;
+        }
 
-nav a {
-  color: var(--text-dim);
-  text-decoration: none;
-  font-weight: 500;
-  transition: 0.3s;
-}
+        nav ul {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+            background: rgba(17, 17, 17, 0.8);
+            backdrop-filter: blur(12px);
+            padding: 12px 40px;
+            border-radius: 50px;
+            border: 1px solid rgba(166, 0, 255, 0.2);
+            margin: 0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
 
-nav a:hover {
-  color: var(--primary);
-  text-shadow: 0 0 10px rgba(166, 0, 255, 0.5);
-}
+        nav a {
+            color: var(--text-dim);
+            text-decoration: none;
+            font-weight: 500;
+            transition: 0.3s;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
 
-/* SECTION TITLE */
-h2 {
-  font-weight: 600;
-  margin-top: 80px;
-  color: var(--text-main);
-  opacity: 0.9;
-}
+        nav a:hover {
+            color: var(--primary);
+            text-shadow: 0 0 10px rgba(166, 0, 255, 0.5);
+        }
 
-/* GRID & CARDS */
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 25px;
-  padding: 40px;
-  max-width: 1200px;
-  margin: 0 auto;
-}
+        /* SECTIONS */
+        section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
 
-.card {
-  background: var(--card-bg);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 20px;
-  overflow: hidden;
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  position: relative;
-}
+        h2 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 40px;
+            font-weight: 600;
+        }
 
-.card::before {
-  content: "";
-  position: absolute;
-  top: 0; left: 0; width: 100%; height: 100%;
-  background: linear-gradient(45deg, transparent, rgba(166, 0, 255, 0.1));
-  pointer-events: none;
-}
+        /* GRID & CARDS */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
 
-.card:hover {
-  transform: translateY(-10px);
-  border-color: var(--primary);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5), 0 0 15px rgba(166, 0, 255, 0.2);
-  background: rgba(255, 255, 255, 0.08);
-}
+        .card {
+            background: var(--card-bg);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+        }
 
-.card a {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 180px; /* Altezza fissa per le categorie */
-  color: white;
-  text-decoration: none;
-  padding: 20px;
-}
+        .card:hover {
+            transform: translateY(-12px);
+            border-color: var(--primary);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 20px rgba(166, 0, 255, 0.15);
+            background: rgba(255, 255, 255, 0.08);
+        }
 
-.card h3 {
-  margin: 0;
-  font-size: 1.5rem;
-  font-weight: 600;
-  letter-spacing: 1px;
-}
+        .card a {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 200px;
+            color: white;
+            text-decoration: none;
+            padding: 30px;
+        }
 
-.card span {
-  font-size: 0.8rem;
-  color: var(--primary);
-  text-transform: uppercase;
-  margin-top: 10px;
-  font-weight: 700;
-  letter-spacing: 2px;
-}
+        .card h3 {
+            margin: 0;
+            font-size: 1.6rem;
+            font-weight: 600;
+        }
 
-/* Scrollbar personalizzata */
-::-webkit-scrollbar { width: 8px; }
-::-webkit-scrollbar-track { background: #000; }
-::-webkit-scrollbar-thumb { background: var(--primary); border-radius: 10px; }
+        .card span {
+            font-size: 0.75rem;
+            color: var(--primary);
+            text-transform: uppercase;
+            margin-top: 12px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            opacity: 0.8;
+        }
 
-</style>
+        /* ABOUT SECTION */
+        .about-container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 50px;
+            background: var(--card-bg);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 32px;
+            position: relative;
+        }
+
+        .about-text h2 {
+            text-align: left;
+            margin-bottom: 20px;
+            background: linear-gradient(to right, #fff, var(--primary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .about-text p {
+            color: var(--text-dim);
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .about-stats {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .stat-item {
+            background: rgba(166, 0, 255, 0.1);
+            padding: 8px 18px;
+            border-radius: 50px;
+            border: 1px solid rgba(166, 0, 255, 0.3);
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #e0a3ff;
+        }
+
+        /* FOOTER */
+        footer {
+            text-align: center;
+            padding: 60px 20px;
+            color: var(--text-dim);
+            font-size: 0.9em;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            margin-top: 50px;
+        }
+
+        /* Scrollbar Custom */
+        ::-webkit-scrollbar { width: 10px; }
+        ::-webkit-scrollbar-track { background: var(--bg-dark); }
+        ::-webkit-scrollbar-thumb { background: var(--primary); border-radius: 10px; border: 3px solid var(--bg-dark); }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav ul { padding: 10px 20px; gap: 20px; }
+            .about-container { padding: 30px; margin: 20px; }
+        }
+    </style>
 </head>
 
 <body>
 
-<header id="n1">M1STYC</header>
+    <header id="n1">M1STYC</header>
 
-<nav>
-  <ul>
-    <li><a href="#n1">Home</a></li>
-    <li><a href="#n2">Projects</a></li>
-  </ul>
-</nav>
+    <nav>
+        <ul>
+            <li><a href="#n1">Home</a></li>
+            <li><a href="#n2">Projects</a></li>
+            <li><a href="#about">About</a></li>
+        </ul>
+    </nav>
 
-<section id="n2">
-  <h2 style="text-align:center;">Free Project Files</h2>
+    <section id="n2">
+        <h2>Free Project Files</h2>
+        <div class="grid">
 
-  <div class="grid">
+            <div class="card">
+                <a href="typo.html">
+                    <h3>Typography</h3>
+                    <span>Open Category</span>
+                </a>
+            </div>
 
-    <div class="card">
-      <a href="typo.html">
-        <h3>Typography</h3>
-        <span>View Collection</span>
-      </a>
-    </div>
+            <div class="card">
+                <a href="seamless.html">
+                    <h3>Seamless</h3>
+                    <span>Open Category</span>
+                </a>
+            </div>
 
-    <div class="card">
-      <a href="seamless.html">
-        <h3>Seamless</h3>
-        <span>View Collection</span>
-      </a>
-    </div>
+            <div class="card">
+                <a href="animation.html">
+                    <h3>Animation</h3>
+                    <span>Open Category</span>
+                </a>
+            </div>
 
-    <div class="card">
-      <a href="animation.html">
-        <h3>Animation</h3>
-        <span>View Collection</span>
-      </a>
-    </div>
+        </div>
+    </section>
 
-  </div>
-</section>
+    <section id="about">
+        <div class="about-container">
+            <div class="about-text">
+                <h2>About Me</h2>
+                <p>
+                    Ciao! Sono <strong>M1styc</strong>, un creator digitale specializzato in motion design e visual arts. 
+                    Ho deciso di rendere pubblici i miei <strong>Project Files</strong> per supportare la community 
+                    di editor, offrendo risorse gratuite di alta qualità pronte all'uso.
+                </p>
+                <p>
+                    Il mio obiettivo è sperimentare costantemente con nuovi stili grafici e tecniche di animazione. 
+                    Se usi i miei file, sentiti libero di taggarmi: mi fa sempre piacere vedere cosa create!
+                </p>
+                
+                <div class="about-stats">
+                    <div class="stat-item">✨ Motion Graphics</div>
+                    <div class="stat-item">🎨 After Effects</div>
+                    <div class="stat-item">🚀 Free Assets</div>
+                    <div class="stat-item">💎 High Quality</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        M1styc &copy; 2026 • Design by M1styc <br>
+        <small style="opacity: 0.5;">Tutti i diritti sui file grafici appartengono all'autore.</small>
+    </footer>
 
 </body>
 </html>
